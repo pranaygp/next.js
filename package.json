@@ -15,8 +15,9 @@
     "build": "gulp",
     "test": "standard && gulp test",
     "lint": "standard",
-    "prepublish": "gulp release",
-    "precommit": "npm run lint"
+    "prepublish": "npm run snyk-protect; gulp release",
+    "precommit": "npm run lint",
+    "snyk-protect": "snyk protect"
   },
   "ava": {
     "babel": {
@@ -64,7 +65,8 @@
     "url": "0.11.0",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.16.2",
-    "write-file-webpack-plugin": "3.3.0"
+    "write-file-webpack-plugin": "3.3.0",
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "babel-eslint": "7.0.0",
@@ -80,5 +82,6 @@
     "run-sequence": "1.2.2",
     "standard": "8.4.0",
     "webpack-stream": "3.2.0"
-  }
+  },
+  "snyk": true
 }
